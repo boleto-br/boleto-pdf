@@ -1,0 +1,23 @@
+{
+  "name": "boleto-pdf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boleto-br/boleto-pdf.git"
+  },
+  "author": "Thiago Santos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/boleto-br/boleto-pdf/issues"
+  },
+  "homepage": "https://github.com/boleto-br/boleto-pdf#readme",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "puppeteer": "^0.10.1"
+  }
+}

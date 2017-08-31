@@ -16,35 +16,6 @@ doc.addPage({
 })
 
 header(doc)
-
-cutSeparator(doc, 100)
-
-
-
-
-/* doc
-  .fontSize(12)
-  .text('Here is some vector graphics...', MARGIN, MARGIN + 40)
-
-doc
-  .font('fonts/roboto-regular.ttf')
-  .fontSize(25)
-  .text('Here is some vector graphics...')
-
-function color(i) {
-  return i % 2 ? '#ffffff' : '#000000';
-}
-
-var pos = 0
-var y = 0
-for (var i = 0; i < stripes.length; i++ , pos += width) {
-  var width = stripes[i]
-
-  doc
-    .save()
-    .rect(MARGIN + y, 300, width, 50)
-    .fill(color(i))
-  y += width
-} */
+//cutSeparator(doc, 100)
 
 doc.end()

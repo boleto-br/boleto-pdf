@@ -416,7 +416,7 @@ module.exports = function(doc) {
     .fontSize(smallFontSize)
     .font(fontRegular)
     .text(
-    '(+) Mora / Multa',
+      '(+) Mora / Multa',
       startX + tableLimit * (3 / 5) + smallGutterX,
       startY + boxHeight * 4 + smallGutterY
     )
@@ -440,9 +440,9 @@ module.exports = function(doc) {
     .fontSize(smallFontSize)
     .font(fontRegular)
     .text(
-    '(=) Valor cobrado',
-    startX + tableLimit * (4 / 5) + smallGutterX,
-    startY + boxHeight * 4 + smallGutterY
+      '(=) Valor cobrado',
+      startX + tableLimit * (4 / 5) + smallGutterX,
+      startY + boxHeight * 4 + smallGutterY
     )
   
   doc
@@ -487,7 +487,7 @@ module.exports = function(doc) {
       .fontSize(fontSize)
       .font(fontRegular)
       .text(
-      'Rua Maria Gertrudes Coelho, 827',
+        'Rua Maria Gertrudes Coelho, 827',
         startX + 30,
         startY + boxHeight * 5 + 13
       )
@@ -497,8 +497,8 @@ module.exports = function(doc) {
       .font(fontRegular)
       .text(
         'Divinópolis-MG - CEP: 35500-700',
-          startX + 30,
-          startY + boxHeight * 5 + 23
+        startX + 30,
+        startY + boxHeight * 5 + 23
       )
       
     doc
@@ -514,7 +514,7 @@ module.exports = function(doc) {
       .fontSize(7)
       .font(fontRegular)
       .text(
-      'ACME Telecomunicações Ltda',
+        'ACME Telecomunicações Ltda',
         startX + 50,
         startY + boxHeight * 5 + 43
       )
@@ -523,25 +523,25 @@ module.exports = function(doc) {
       .fontSize(7)
       .font(fontRegular)
       .text(
-      'Servidão 439, Estrada Nova',
-      startX + 50,
-      startY + boxHeight * 5 + 53
+        'Servidão 439, Estrada Nova',
+        startX + 50,
+        startY + boxHeight * 5 + 53
       )
 
     doc
       .fontSize(7)
       .font(fontRegular)
       .text(
-      'Jaraguá do Sul - SC - CEP: 89254-375',
-      startX + 50,
-      startY + boxHeight * 5 + 63
+        'Jaraguá do Sul - SC - CEP: 89254-375',
+        startX + 50,
+        startY + boxHeight * 5 + 63
       )
     
     doc
       .fontSize(smallFontSize)
       .font(fontRegular)
       .text(
-      'Auntênticação Mecânica - Recibo',
+        'Auntênticação Mecânica - Recibo',
         tableLimit - 70,
         startY + boxHeight * 8 + 5
       )

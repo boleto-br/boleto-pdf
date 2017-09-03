@@ -16,6 +16,6 @@ doc.addPage({
 })
 
 header(doc)
-//cutSeparator(doc, 100)
+cutSeparator(doc, 250)
 
 doc.end()

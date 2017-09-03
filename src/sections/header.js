@@ -464,4 +464,85 @@ module.exports = function(doc) {
       startX,
       startY + boxHeight * 5, tableLimit, boxHeight * 3)
     .stroke(lineColor)
+  
+    doc
+    .fontSize(smallFontSize)
+    .font(fontRegular)
+    .text(
+      'Pagador',
+      startX + smallGutterX,
+      startY + boxHeight * 5 + smallGutterY
+    )
+
+    doc
+      .fontSize(fontSize)
+      .font(fontBold)
+      .text(
+        'Anita Albuquerque - 221.412.772-05',
+        startX + 30,
+        startY + boxHeight * 5 + 3
+      )
+    
+    doc
+      .fontSize(fontSize)
+      .font(fontRegular)
+      .text(
+      'Rua Maria Gertrudes Coelho, 827',
+        startX + 30,
+        startY + boxHeight * 5 + 13
+      )
+    
+    doc
+      .fontSize(fontSize)
+      .font(fontRegular)
+      .text(
+        'Divinópolis-MG - CEP: 35500-700',
+          startX + 30,
+          startY + boxHeight * 5 + 23
+      )
+      
+    doc
+      .fontSize(smallFontSize)
+      .font(fontRegular)
+      .text(
+        'Sacador/Avalista',
+        startX + smallGutterX,
+        startY + boxHeight * 5 + 40
+      )
+    
+    doc
+      .fontSize(7)
+      .font(fontRegular)
+      .text(
+      'ACME Telecomunicações Ltda',
+        startX + 50,
+        startY + boxHeight * 5 + 43
+      )
+
+    doc
+      .fontSize(7)
+      .font(fontRegular)
+      .text(
+      'Servidão 439, Estrada Nova',
+      startX + 50,
+      startY + boxHeight * 5 + 53
+      )
+
+    doc
+      .fontSize(7)
+      .font(fontRegular)
+      .text(
+      'Jaraguá do Sul - SC - CEP: 89254-375',
+      startX + 50,
+      startY + boxHeight * 5 + 63
+      )
+    
+    doc
+      .fontSize(smallFontSize)
+      .font(fontRegular)
+      .text(
+      'Auntênticação Mecânica - Recibo',
+        tableLimit - 70,
+        startY + boxHeight * 8 + 5
+      )
 }

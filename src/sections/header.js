@@ -329,7 +329,7 @@ module.exports = function(doc) {
   doc
     .text(
       value,
-      startX + tableLimit - widthStringValue - gutterX,
+      startX + tableLimit - widthStringValue - 10,
       startY + boxHeight * 3 + 9
     )
 
@@ -514,7 +514,7 @@ module.exports = function(doc) {
       .fontSize(7)
       .font(fontRegular)
       .text(
-        'ACME Telecomunicações Ltda',
+        'ACME Telecomunicações Ltda - CNPJ: 074.064.502/0001-12',
         startX + 50,
         startY + boxHeight * 5 + 43
       )

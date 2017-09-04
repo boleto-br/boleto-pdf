@@ -6,5 +6,6 @@ module.exports = function(doc, startY){
     .lineWidth(1)
     .dash(5, {space: 2}) 
     .lineTo(pageWidth - marginLeft, startY)
-    .stroke()      
+    .stroke()
+    
 }

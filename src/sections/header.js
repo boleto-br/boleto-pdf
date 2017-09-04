@@ -1,4 +1,4 @@
-module.exports = function(doc) {
+export default function (doc) {
   const marginLeft = doc.page.margins.left
   const marginTop = doc.page.margins.top
   const marginRight = doc.page.margins.right
@@ -10,7 +10,7 @@ module.exports = function(doc) {
   const line = 0.3
   const tableLimit = pageWidth - marginLeft - marginRight
   const lineColor = '#000'
-  const boxHeight = 25 // calc base on text
+  const boxHeight = 25 // Calc base on text
   const gutterX = 10
   const gutterY = 12
   const smallFontSize = 5.8
@@ -24,16 +24,16 @@ module.exports = function(doc) {
 
   doc
     .image(
-      'logos/logo-bradesco.jpg', 
-      startX + smallGutterX, 
-      startY, 
+      'logos/logo-bradesco.jpg',
+      startX + smallGutterX,
+      startY,
       {height: 23}
     )
 
   doc
     .rect(startX + 120, startY, line, boxHeight)
     .fill(lineColor)
-  
+
   doc
     .fontSize(largefontSize)
     .font(fontBold)
@@ -41,47 +41,47 @@ module.exports = function(doc) {
 
   doc
     .rect(
-      startX + 170, 
-      startY, 
-      line, 
+      startX + 170,
+      startY,
+      line,
       boxHeight
     )
     .fill(lineColor)
-  
+
   doc
     .fontSize(largefontSize)
     .text(
-      '23797.50603 91900.000125 08005.429108 7 72670000000999', 
-      startX + 190, 
+      '23797.50603 91900.000125 08005.429108 7 72670000000999',
+      startX + 190,
       startY + 8
     )
 
   doc
     .rect(
-      startX, 
-      startY + boxHeight, 
-      tableLimit, 
+      startX,
+      startY + boxHeight,
+      tableLimit,
       line
     )
     .fill(lineColor)
-  
-  // box
+
+  // Box
   doc
     .rect(
-      startX, 
-      startY + boxHeight, 
-      tableLimit, 
+      startX,
+      startY + boxHeight,
+      tableLimit,
       boxHeight
     )
     .lineWidth(line)
     .stroke(lineColor)
-  
+
   doc
     .fontSize(smallFontSize)
     .font(fontRegular)
     .text(
-      'Local de Pagamento', 
-      startX + smallGutterX, 
+      'Local de Pagamento',
+      startX + smallGutterX,
       startY + boxHeight + smallGutterY
     )
 
@@ -89,20 +89,20 @@ module.exports = function(doc) {
     .fontSize(fontSize)
     .font(fontBold)
     .text(
-      'Pagável preferencialmente na rede Bradesco ou Bradesco Expresso.', 
-      startX + gutterX, 
+      'Pagável preferencialmente na rede Bradesco ou Bradesco Expresso.',
+      startX + gutterX,
       startY + boxHeight + gutterY
     )
-  
+
   doc
     .rect(
-      startX, 
-      startY + boxHeight * 2, 
-      tableLimit * (2/4), 
+      startX,
+      startY + boxHeight * 2,
+      tableLimit * (2 / 4),
       boxHeight
     )
     .stroke(lineColor)
-  
+
   doc
     .fontSize(smallFontSize)
     .font(fontRegular)
@@ -132,9 +132,9 @@ module.exports = function(doc) {
 
   doc
     .rect(
-      startX + tableLimit * (2 / 4), 
-      startY + boxHeight * 2, 
-      tableLimit * (1 / 4), 
+      startX + tableLimit * (2 / 4),
+      startY + boxHeight * 2,
+      tableLimit * (1 / 4),
       boxHeight
     )
     .stroke(lineColor)
@@ -159,12 +159,12 @@ module.exports = function(doc) {
 
   doc
     .rect(
-      startX + tableLimit * (3 / 4), 
-      startY + boxHeight * 2, 
+      startX + tableLimit * (3 / 4),
+      startY + boxHeight * 2,
       tableLimit * (1 / 4), boxHeight
     )
     .stroke(lineColor)
-  
+
   doc
     .fontSize(smallFontSize)
     .font(fontRegular)
@@ -182,14 +182,14 @@ module.exports = function(doc) {
       startX + tableLimit * (3 / 4) + 65,
       startY + boxHeight * 2 + 7
     )
-    
-  // next line table
+
+  // Next line table
   doc
     .rect(
-      startX, startY + boxHeight * 3, 
+      startX, startY + boxHeight * 3,
       tableLimit * (1.5 / 10), boxHeight)
     .stroke(lineColor)
-  
+
   doc
     .fontSize(smallFontSize)
     .font(fontRegular)
@@ -197,7 +197,7 @@ module.exports = function(doc) {
       'Data do Documento',
       startX + smallGutterX,
       startY + boxHeight * 3 + smallGutterY
-    ) 
+    )
 
   doc
     .fontSize(fontSize)
@@ -206,11 +206,11 @@ module.exports = function(doc) {
       '18/08/2017',
       startX + gutterX,
       startY + boxHeight * 3 + gutterY
-    ) 
-  
+    )
+
   doc
     .rect(
-      startX + tableLimit * (1.5 / 10) , 
+      startX + tableLimit * (1.5 / 10),
       startY + boxHeight * 3, tableLimit * (1.5 / 10), boxHeight)
     .stroke(lineColor)
 
@@ -221,7 +221,7 @@ module.exports = function(doc) {
       'Data do Processamento',
       startX + tableLimit * (1.5 / 10) + smallGutterX,
       startY + boxHeight * 3 + smallGutterY
-    ) 
+    )
 
   doc
     .fontSize(fontSize)
@@ -234,8 +234,8 @@ module.exports = function(doc) {
 
   doc
     .rect(
-      startX + tableLimit * ( 3 / 10), startY + boxHeight * 3, 
-      tableLimit * ( 0.6 / 10), boxHeight)
+      startX + tableLimit * (3 / 10), startY + boxHeight * 3,
+      tableLimit * (0.6 / 10), boxHeight)
     .stroke(lineColor)
 
   doc
@@ -255,13 +255,13 @@ module.exports = function(doc) {
       startX + tableLimit * (3 / 10) + gutterX,
       startY + boxHeight * 3 + gutterY
     )
-  
+
   doc
     .rect(
       startX + tableLimit * (3.6 / 10),
       startY + boxHeight * 3, tableLimit * (2 / 10), boxHeight)
     .stroke(lineColor)
-  
+
   doc
     .fontSize(smallFontSize)
     .font(fontRegular)
@@ -270,7 +270,7 @@ module.exports = function(doc) {
       startX + tableLimit * (3.6 / 10) + smallGutterX,
       startY + boxHeight * 3 + smallGutterY
     )
-  
+
   doc
     .fontSize(fontSize)
     .font(fontRegular)
@@ -282,10 +282,10 @@ module.exports = function(doc) {
 
   doc
     .rect(
-      startX + tableLimit * (5.6 / 10), 
+      startX + tableLimit * (5.6 / 10),
       startY + boxHeight * 3, tableLimit * (2.2 / 10), boxHeight)
     .stroke(lineColor)
-  
+
   doc
     .fontSize(smallFontSize)
     .font(fontRegular)
@@ -310,7 +310,7 @@ module.exports = function(doc) {
       startY + boxHeight * 3, tableLimit * (2.2 / 10), boxHeight
     )
     .stroke(lineColor)
-  
+
   doc
     .fontSize(smallFontSize)
     .font(fontRegular)
@@ -323,9 +323,9 @@ module.exports = function(doc) {
   doc
     .fontSize(mediumFontSize)
     .font(fontBold)
-    
+
   const widthStringValue = doc.widthOfString(value)
-  
+
   doc
     .text(
       value,
@@ -333,22 +333,22 @@ module.exports = function(doc) {
       startY + boxHeight * 3 + 9
     )
 
-  // new line
+  // New line
   doc
     .rect(
       startX,
       startY + boxHeight * 4, tableLimit * (1 / 5), boxHeight)
     .stroke(lineColor)
-  
+
   doc
     .fontSize(smallFontSize)
     .font(fontRegular)
     .text(
       '(-) Desconto / Abatimento',
-      startX +  smallGutterX,
+      startX + smallGutterX,
       startY + boxHeight * 4 + smallGutterY
     )
-  
+
   doc
     .fontSize(fontSize)
     .font(fontRegular)
@@ -363,7 +363,7 @@ module.exports = function(doc) {
       startX + tableLimit * (1 / 5),
       startY + boxHeight * 4, tableLimit * (1 / 5), boxHeight)
     .stroke(lineColor)
-  
+
   doc
     .fontSize(smallFontSize)
     .font(fontRegular)
@@ -387,7 +387,7 @@ module.exports = function(doc) {
       startX + tableLimit * (2 / 5),
       startY + boxHeight * 4, tableLimit * (1 / 5), boxHeight)
     .stroke(lineColor)
-  
+
   doc
     .fontSize(smallFontSize)
     .font(fontRegular)
@@ -411,7 +411,7 @@ module.exports = function(doc) {
       startX + tableLimit * (3 / 5),
       startY + boxHeight * 4, tableLimit * (1 / 5), boxHeight)
     .stroke(lineColor)
-  
+
   doc
     .fontSize(smallFontSize)
     .font(fontRegular)
@@ -444,28 +444,28 @@ module.exports = function(doc) {
       startX + tableLimit * (4 / 5) + smallGutterX,
       startY + boxHeight * 4 + smallGutterY
     )
-  
+
   doc
     .fontSize(mediumFontSize)
     .font(fontBold)
 
   const widthOfStringCharge = doc.widthOfString(chargeValue)
-  
+
   doc
     .text(
       chargeValue,
       tableLimit - widthOfStringCharge + gutterX,
       startY + boxHeight * 4 + gutterY
     )
-  
-  // payer info box
+
+  // Payer info box
   doc
     .rect(
       startX,
       startY + boxHeight * 5, tableLimit, boxHeight * 3)
     .stroke(lineColor)
-  
-    doc
+
+  doc
     .fontSize(smallFontSize)
     .font(fontRegular)
     .text(
@@ -474,7 +474,7 @@ module.exports = function(doc) {
       startY + boxHeight * 5 + smallGutterY
     )
 
-    doc
+  doc
       .fontSize(fontSize)
       .font(fontBold)
       .text(
@@ -482,8 +482,8 @@ module.exports = function(doc) {
         startX + 30,
         startY + boxHeight * 5 + 3
       )
-    
-    doc
+
+  doc
       .fontSize(fontSize)
       .font(fontRegular)
       .text(
@@ -491,8 +491,8 @@ module.exports = function(doc) {
         startX + 30,
         startY + boxHeight * 5 + 13
       )
-    
-    doc
+
+  doc
       .fontSize(fontSize)
       .font(fontRegular)
       .text(
@@ -500,8 +500,8 @@ module.exports = function(doc) {
         startX + 30,
         startY + boxHeight * 5 + 23
       )
-      
-    doc
+
+  doc
       .fontSize(smallFontSize)
       .font(fontRegular)
       .text(
@@ -509,8 +509,8 @@ module.exports = function(doc) {
         startX + smallGutterX,
         startY + boxHeight * 5 + 40
       )
-    
-    doc
+
+  doc
       .fontSize(7)
       .font(fontRegular)
       .text(
@@ -519,7 +519,7 @@ module.exports = function(doc) {
         startY + boxHeight * 5 + 43
       )
 
-    doc
+  doc
       .fontSize(7)
       .font(fontRegular)
       .text(
@@ -528,7 +528,7 @@ module.exports = function(doc) {
         startY + boxHeight * 5 + 53
       )
 
-    doc
+  doc
       .fontSize(7)
       .font(fontRegular)
       .text(
@@ -536,8 +536,8 @@ module.exports = function(doc) {
         startX + 50,
         startY + boxHeight * 5 + 63
       )
-    
-    doc
+
+  doc
       .fontSize(smallFontSize)
       .font(fontRegular)
       .text(

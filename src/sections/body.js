@@ -1,6 +1,5 @@
-module.exports = function(doc, startY) {
+export default function (doc, startY) {
   const marginLeft = doc.page.margins.left
-  const marginTop = doc.page.margins.top
   const marginRight = doc.page.margins.right
   const pageWidth = doc.page.width
   const startX = marginLeft
@@ -9,7 +8,7 @@ module.exports = function(doc, startY) {
   const line = 0.3
   const tableLimit = pageWidth - marginLeft - marginRight
   const lineColor = '#000'
-  const boxHeight = 25 // calc base on text
+  const boxHeight = 25 // Calc base on text
   const gutterX = 10
   const gutterY = 12
   const smallFontSize = 5.8
@@ -19,10 +18,9 @@ module.exports = function(doc, startY) {
   const fontBold = 'fonts/roboto-bold.ttf'
   const fontRegular = 'fonts/roboto-regular.ttf'
   const value = 'R$ 9,99'
-  const chargeValue = ' '
   const rightSize = 160
   const widthStringValue = doc.widthOfString(value)
-  // restore line 
+  // Restore line
   doc
     .lineWidth(line)
     .undash()
@@ -32,7 +30,7 @@ module.exports = function(doc, startY) {
     'logos/logo-bradesco.jpg',
       startX + smallGutterX,
       startY,
-      { height: 23 }
+      {height: 23}
     )
 
   doc
@@ -70,7 +68,7 @@ module.exports = function(doc, startY) {
     )
     .fill(lineColor)
 
-    // local de pagamentp
+    // Local de pagamentp
   doc
     .rect(
       startX,
@@ -330,8 +328,8 @@ module.exports = function(doc, startY) {
       startX + 325 + smallGutterX,
       startY + boxHeight * 3 + gutterX
     )
-  // right side
-  
+  // Right side
+
   doc
     .rect(
       startX + tableLimit - rightSize,
@@ -359,7 +357,7 @@ module.exports = function(doc, startY) {
       startX + tableLimit - rightSize + 52,
       startY + boxHeight * 3 + gutterX
     )
-  
+
   doc
     .rect(
       startX,
@@ -490,7 +488,7 @@ module.exports = function(doc, startY) {
       startX + 240 + gutterX,
       startY + boxHeight * 4 + gutterX
     )
-  // right side
+  // Right side
   doc
     .rect(
       startX + tableLimit - rightSize,
@@ -509,7 +507,7 @@ module.exports = function(doc, startY) {
       startX + tableLimit - rightSize + smallGutterX,
       startY + boxHeight * 4 + smallGutterY
     )
-  
+
   doc
     .fontSize(mediumFontSize)
     .font(fontBold)
@@ -528,7 +526,7 @@ module.exports = function(doc, startY) {
     )
     .lineWidth(line)
     .stroke(lineColor)
-  
+
   doc
     .fontSize(smallFontSize)
     .font(fontRegular)
@@ -537,7 +535,7 @@ module.exports = function(doc, startY) {
       startX + smallGutterX,
       startY + boxHeight * 5 + smallGutterY
     )
-  
+
   doc
     .fontSize(fontSize)
     .font(fontBold)
@@ -546,7 +544,7 @@ module.exports = function(doc, startY) {
       startX + smallGutterX,
       startY + boxHeight * 5 + gutterY
     )
-  
+
   doc
     .rect(
       startX + tableLimit - rightSize,
@@ -556,7 +554,7 @@ module.exports = function(doc, startY) {
     )
     .lineWidth(line)
     .stroke(lineColor)
-  
+
   doc
     .rect(
       startX + tableLimit - rightSize,
@@ -566,7 +564,7 @@ module.exports = function(doc, startY) {
     )
     .lineWidth(line)
     .stroke(lineColor)
-  
+
   doc
     .fontSize(smallFontSize)
     .font(fontRegular)
@@ -594,7 +592,7 @@ module.exports = function(doc, startY) {
     )
     .lineWidth(line)
     .stroke(lineColor)
-  
+
   doc
     .fontSize(smallFontSize)
     .font(fontRegular)
@@ -622,7 +620,7 @@ module.exports = function(doc, startY) {
     )
     .lineWidth(line)
     .stroke(lineColor)
-  
+
   doc
     .fontSize(smallFontSize)
     .font(fontRegular)
@@ -678,7 +676,7 @@ module.exports = function(doc, startY) {
     )
     .lineWidth(line)
     .stroke(lineColor)
-  
+
   doc
     .fontSize(smallFontSize)
     .font(fontRegular)
@@ -696,7 +694,7 @@ module.exports = function(doc, startY) {
       startX + tableLimit - rightSize + gutterX,
       startY + boxHeight * 9 + gutterY
     )
-  
+
   doc
     .rect(
       startX,
@@ -706,7 +704,7 @@ module.exports = function(doc, startY) {
     )
     .lineWidth(line)
     .stroke(lineColor)
-  
+
   doc
     .fontSize(smallFontSize)
     .font(fontRegular)

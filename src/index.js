@@ -1,9 +1,9 @@
-const fs = require('fs')
-const PDFDocument = require('pdfkit')
-const header = require('./sections/header')
-const cutSeparator = require('./sections/cut-separator')
-const body = require('./sections/body')
-const barcode = require('./sections/barcode')
+import fs from 'fs'
+import PDFDocument from 'pdfkit'
+import header from './sections/header'
+import cutSeparator from './sections/cut-separator'
+import body from './sections/body'
+import barcode from './sections/barcode'
 
 const MARGIN = 25 // 1/2 inch
 
@@ -20,6 +20,6 @@ doc.addPage({
 header(doc)
 cutSeparator(doc, 250)
 body(doc, 260)
-barcode(doc, MARGIN, 595,'23797726700000009997506091900000120800542910')
+barcode(doc, MARGIN, 595, '23797726700000009997506091900000120800542910')
 
 doc.end()

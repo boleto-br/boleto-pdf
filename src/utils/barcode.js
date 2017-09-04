@@ -9,9 +9,9 @@ const WEIGHTS = [
   '11122', // 7
   '21121', // 8
   '12121'  // 9
-];
+]
 
-const START = '1111';
+const START = '1111'
 
 /**
  * Representation of Stop portion of the barcode
@@ -19,29 +19,29 @@ const START = '1111';
  * @default
  * @constant
  */
-const STOP = '211';
+const STOP = '211'
 
 function encode(number) {
-  return START + number.match(/(..?)/g).map(interleavePair).join('') + STOP;
+  return START + number.match(/(..?)/g).map(interleavePair).join('') + STOP
 }
 
 function interleavePair(pair) {
+  const black = WEIGHTS[Math.floor(pair / 10)]
+  const white = WEIGHTS[pair % 10]
 
-  const black = WEIGHTS[Math.floor(pair / 10)];
-  const white = WEIGHTS[pair % 10];
-
-  let p = '';
+  let p = ''
 
   for (let i = 0; i < 5; i++) {
-    p += black[i];
-    p += white[i];
+    p += black[i]
+    p += white[i]
   }
 
-  return p;
+  return p
 }
 
-
-module.exports = function(code){
+export default function (code) {
   const coded = encode(code)
-  return coded.split('').map(function (a) { return parseInt(a, 10); });
+  return coded.split('').map(a => {
+    return parseInt(a, 10)
+  })
 }

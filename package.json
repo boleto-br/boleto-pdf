@@ -8,7 +8,8 @@
     "pretest": "npm run prettier && xo --fix",
     "test": "jest",
     "test:watch": "jest --watch",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "precommit": "npm test && npm run build"
   },
   "repository": {
     "type": "git",

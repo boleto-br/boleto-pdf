@@ -1,5 +1,5 @@
-import generatePdf from './generate-pdf'
+import generatePdf from './bradesco/generate-pdf'
 
 export default {
-  bradescoPdf: generatePdf
+  bradesco: generatePdf
 }

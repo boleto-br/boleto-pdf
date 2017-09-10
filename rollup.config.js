@@ -32,9 +32,9 @@ export default {
     resolve(),
     filesize(),
     copy({
-      'src/fonts/roboto-bold.ttf': 'dist/fonts/roboto-bold.ttf',
-      'src/fonts/roboto-regular.ttf': 'dist/fonts/roboto-regular.ttf',
-      'src/logos/logo-bradesco.jpg': 'dist/logos/logo-bradesco.jpg',
+      'src/bradesco/fonts/roboto-bold.ttf': 'dist/fonts/roboto-bold.ttf',
+      'src/bradesco/fonts/roboto-regular.ttf': 'dist/fonts/roboto-regular.ttf',
+      'src/bradesco/logos/logo-bradesco.jpg': 'dist/logos/logo-bradesco.jpg',
       verbose: true
     })
   ]

@@ -4,7 +4,7 @@
   "description": "boleto pdf generetor ",
   "main": "src/index.js",
   "scripts": {
-    "prettier": "prettier --single-quote --no-semi --no-bracket-spacing --trailing-comma none --write \"lib/**/*.js\" --write \"test/**/*.js\" --write rollup.config.js",
+    "prettier": "prettier --single-quote --no-semi --no-bracket-spacing --trailing-comma none --write \"src/**/*.js\" --write \"test/**/*.js\" --write rollup.config.js",
     "pretest": "npm run prettier && xo --fix",
     "test": "jest",
     "test:watch": "jest --watch",

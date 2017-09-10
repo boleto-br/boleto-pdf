@@ -10,9 +10,7 @@ export default function (doc, startX, startY, code) {
   const stripes = generateStripes(code)
   for (let i = 0; i < stripes.length; i++) {
     const width = stripes[i]
-    doc
-      .rect(startX + y, startY, width, 50)
-      .fill(color(i))
+    doc.rect(startX + y, startY, width, 50).fill(color(i))
     y += width
   }
 }

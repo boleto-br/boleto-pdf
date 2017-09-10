@@ -8,7 +8,7 @@ const WEIGHTS = [
   '12211', // 6
   '11122', // 7
   '21121', // 8
-  '12121'  // 9
+  '12121' // 9
 ]
 
 const START = '1111'
@@ -22,7 +22,14 @@ const START = '1111'
 const STOP = '211'
 
 function encode(number) {
-  return START + number.match(/(..?)/g).map(interleavePair).join('') + STOP
+  return (
+    START +
+    number
+      .match(/(..?)/g)
+      .map(interleavePair)
+      .join('') +
+    STOP
+  )
 }
 
 function interleavePair(pair) {

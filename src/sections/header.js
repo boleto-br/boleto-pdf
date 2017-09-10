@@ -1,4 +1,29 @@
-export default function (doc) {
+export default function (
+  doc,
+  {
+    digitableLine,
+    paymentPlace,
+    beneficiary,
+    beneficiaryAddress,
+    agency,
+    accountNumer,
+    maturityDay,
+    documentDate,
+    processingDate,
+    card,
+    documentNumber,
+    ourNumberline,
+    value,
+    descountValue,
+    otherDiscounts,
+    feeValue,
+    outherFees,
+    chargeValue,
+    payer,
+    guarantor
+  },
+  config
+) {
   const marginLeft = doc.page.margins.left
   const marginTop = doc.page.margins.top
   const marginRight = doc.page.margins.right
@@ -17,62 +42,34 @@ export default function (doc) {
   const fontSize = 9
   const largefontSize = 12
   const mediumFontSize = 11
-  const fontBold = 'fonts/roboto-bold.ttf'
-  const fontRegular = 'fonts/roboto-regular.ttf'
-  const value = 'R$ 9,99'
-  const chargeValue = ' '
+  const fontBold = config.fontsPath + '/roboto-bold.ttf'
+  const fontRegular = config.fontsPath + '/roboto-regular.ttf'
 
-  doc
-    .image(
-      'logos/logo-bradesco.jpg',
-      startX + smallGutterX,
-      startY,
-      {height: 23}
-    )
+  doc.image(
+    config.imagesPath + '/logo-bradesco.jpg',
+    startX + smallGutterX,
+    startY,
+    {
+      height: 23
+    }
+  )
 
-  doc
-    .rect(startX + 120, startY, line, boxHeight)
-    .fill(lineColor)
+  doc.rect(startX + 120, startY, line, boxHeight).fill(lineColor)
 
   doc
     .fontSize(largefontSize)
     .font(fontBold)
     .text('237-2', startX + 130, startY + 8)
 
-  doc
-    .rect(
-      startX + 170,
-      startY,
-      line,
-      boxHeight
-    )
-    .fill(lineColor)
+  doc.rect(startX + 170, startY, line, boxHeight).fill(lineColor)
 
-  doc
-    .fontSize(largefontSize)
-    .text(
-      '23797.50603 91900.000125 08005.429108 7 72670000000999',
-      startX + 190,
-      startY + 8
-    )
+  doc.fontSize(largefontSize).text(digitableLine, startX + 190, startY + 8)
 
-  doc
-    .rect(
-      startX,
-      startY + boxHeight,
-      tableLimit,
-      line
-    )
-    .fill(lineColor)
+  doc.rect(startX, startY + boxHeight, tableLimit, line).fill(lineColor)
 
   // Box
   doc
-    .rect(
-      startX,
-      startY + boxHeight,
-      tableLimit,
-      boxHeight
-    )
+    .rect(startX, startY + boxHeight, tableLimit, boxHeight)
     .lineWidth(line)
     .stroke(lineColor)
 
@@ -88,19 +85,10 @@ export default function (doc) {
   doc
     .fontSize(fontSize)
     .font(fontBold)
-    .text(
-      'Pagável preferencialmente na rede Bradesco ou Bradesco Expresso.',
-      startX + gutterX,
-      startY + boxHeight + gutterY
-    )
+    .text(paymentPlace, startX + gutterX, startY + boxHeight + gutterY)
 
   doc
-    .rect(
-      startX,
-      startY + boxHeight * 2,
-      tableLimit * (2 / 4),
-      boxHeight
-    )
+    .rect(startX, startY + boxHeight * 2, tableLimit * (2 / 4), boxHeight)
     .stroke(lineColor)
 
   doc
@@ -115,20 +103,12 @@ export default function (doc) {
   doc
     .fontSize(8)
     .font(fontBold)
-    .text(
-      'UNICRED FLORIANÓPOLIS - CNPJ: 074.064.502/0001-12',
-      startX + 40,
-      startY + boxHeight * 2 + smallGutterY
-    )
+    .text(beneficiary, startX + 40, startY + boxHeight * 2 + smallGutterY)
 
   doc
     .fontSize(smallFontSize)
     .font(fontBold)
-    .text(
-      'Rua Tenete Silveira, 315 - Centro - Florianópolis - SC  - CEP 88010-301',
-      startX + 40,
-      startY + boxHeight * 2 + 15
-    )
+    .text(beneficiaryAddress, startX + 40, startY + boxHeight * 2 + 15)
 
   doc
     .rect(
@@ -152,7 +132,7 @@ export default function (doc) {
     .fontSize(fontSize)
     .font(fontRegular)
     .text(
-      '7506-0 / 54291-1',
+      agency + ' / ' + accountNumer,
       startX + tableLimit * (2 / 4) + 65,
       startY + boxHeight * 2 + gutterY
     )
@@ -161,7 +141,8 @@ export default function (doc) {
     .rect(
       startX + tableLimit * (3 / 4),
       startY + boxHeight * 2,
-      tableLimit * (1 / 4), boxHeight
+      tableLimit * (1 / 4),
+      boxHeight
     )
     .stroke(lineColor)
 
@@ -178,16 +159,14 @@ export default function (doc) {
     .fontSize(mediumFontSize)
     .font(fontBold)
     .text(
-      '30/08/2017',
+      maturityDay,
       startX + tableLimit * (3 / 4) + 65,
       startY + boxHeight * 2 + 7
     )
 
   // Next line table
   doc
-    .rect(
-      startX, startY + boxHeight * 3,
-      tableLimit * (1.5 / 10), boxHeight)
+    .rect(startX, startY + boxHeight * 3, tableLimit * (1.5 / 10), boxHeight)
     .stroke(lineColor)
 
   doc
@@ -202,16 +181,15 @@ export default function (doc) {
   doc
     .fontSize(fontSize)
     .font(fontRegular)
-    .text(
-      '18/08/2017',
-      startX + gutterX,
-      startY + boxHeight * 3 + gutterY
-    )
+    .text(documentDate, startX + gutterX, startY + boxHeight * 3 + gutterY)
 
   doc
     .rect(
       startX + tableLimit * (1.5 / 10),
-      startY + boxHeight * 3, tableLimit * (1.5 / 10), boxHeight)
+      startY + boxHeight * 3,
+      tableLimit * (1.5 / 10),
+      boxHeight
+    )
     .stroke(lineColor)
 
   doc
@@ -227,15 +205,18 @@ export default function (doc) {
     .fontSize(fontSize)
     .font(fontRegular)
     .text(
-      '18/08/2017',
+      processingDate,
       startX + tableLimit * (1.5 / 10) + gutterX,
       startY + boxHeight * 3 + gutterY
     )
 
   doc
     .rect(
-      startX + tableLimit * (3 / 10), startY + boxHeight * 3,
-      tableLimit * (0.6 / 10), boxHeight)
+      startX + tableLimit * (3 / 10),
+      startY + boxHeight * 3,
+      tableLimit * (0.6 / 10),
+      boxHeight
+    )
     .stroke(lineColor)
 
   doc
@@ -251,7 +232,7 @@ export default function (doc) {
     .fontSize(fontSize)
     .font(fontRegular)
     .text(
-    '09',
+      card,
       startX + tableLimit * (3 / 10) + gutterX,
       startY + boxHeight * 3 + gutterY
     )
@@ -259,7 +240,10 @@ export default function (doc) {
   doc
     .rect(
       startX + tableLimit * (3.6 / 10),
-      startY + boxHeight * 3, tableLimit * (2 / 10), boxHeight)
+      startY + boxHeight * 3,
+      tableLimit * (2 / 10),
+      boxHeight
+    )
     .stroke(lineColor)
 
   doc
@@ -275,7 +259,7 @@ export default function (doc) {
     .fontSize(fontSize)
     .font(fontRegular)
     .text(
-      '42493',
+      documentNumber,
       startX + tableLimit * (3.6 / 10) + gutterX,
       startY + boxHeight * 3 + gutterY
     )
@@ -283,14 +267,17 @@ export default function (doc) {
   doc
     .rect(
       startX + tableLimit * (5.6 / 10),
-      startY + boxHeight * 3, tableLimit * (2.2 / 10), boxHeight)
+      startY + boxHeight * 3,
+      tableLimit * (2.2 / 10),
+      boxHeight
+    )
     .stroke(lineColor)
 
   doc
     .fontSize(smallFontSize)
     .font(fontRegular)
     .text(
-    'Nosso Número',
+      'Nosso Número',
       startX + tableLimit * (5.6 / 10) + smallGutterX,
       startY + boxHeight * 3 + smallGutterY
     )
@@ -299,7 +286,7 @@ export default function (doc) {
     .fontSize(mediumFontSize)
     .font(fontBold)
     .text(
-      '09/19000001208-0',
+      ourNumberline,
       startX + tableLimit * (5.6 / 10) + gutterX,
       startY + boxHeight * 3 + gutterY
     )
@@ -307,7 +294,9 @@ export default function (doc) {
   doc
     .rect(
       startX + tableLimit * (7.8 / 10),
-      startY + boxHeight * 3, tableLimit * (2.2 / 10), boxHeight
+      startY + boxHeight * 3,
+      tableLimit * (2.2 / 10),
+      boxHeight
     )
     .stroke(lineColor)
 
@@ -320,24 +309,19 @@ export default function (doc) {
       startY + boxHeight * 3 + smallGutterY
     )
 
-  doc
-    .fontSize(mediumFontSize)
-    .font(fontBold)
+  doc.fontSize(mediumFontSize).font(fontBold)
 
   const widthStringValue = doc.widthOfString(value)
 
-  doc
-    .text(
-      value,
-      startX + tableLimit - widthStringValue - 10,
-      startY + boxHeight * 3 + 9
-    )
+  doc.text(
+    value,
+    startX + tableLimit - widthStringValue - 10,
+    startY + boxHeight * 3 + 9
+  )
 
   // New line
   doc
-    .rect(
-      startX,
-      startY + boxHeight * 4, tableLimit * (1 / 5), boxHeight)
+    .rect(startX, startY + boxHeight * 4, tableLimit * (1 / 5), boxHeight)
     .stroke(lineColor)
 
   doc
@@ -352,16 +336,15 @@ export default function (doc) {
   doc
     .fontSize(fontSize)
     .font(fontRegular)
-    .text(
-      ' ',
-      startX + gutterX,
-      startY + boxHeight * 4 + gutterY
-    )
+    .text(descountValue, startX + gutterX, startY + boxHeight * 4 + gutterY)
 
   doc
     .rect(
       startX + tableLimit * (1 / 5),
-      startY + boxHeight * 4, tableLimit * (1 / 5), boxHeight)
+      startY + boxHeight * 4,
+      tableLimit * (1 / 5),
+      boxHeight
+    )
     .stroke(lineColor)
 
   doc
@@ -377,7 +360,7 @@ export default function (doc) {
     .fontSize(fontSize)
     .font(fontRegular)
     .text(
-      ' ',
+      otherDiscounts,
       startX + tableLimit * (1 / 5) + gutterX,
       startY + boxHeight * 4 + gutterY
     )
@@ -385,7 +368,10 @@ export default function (doc) {
   doc
     .rect(
       startX + tableLimit * (2 / 5),
-      startY + boxHeight * 4, tableLimit * (1 / 5), boxHeight)
+      startY + boxHeight * 4,
+      tableLimit * (1 / 5),
+      boxHeight
+    )
     .stroke(lineColor)
 
   doc
@@ -401,7 +387,7 @@ export default function (doc) {
     .fontSize(fontSize)
     .font(fontRegular)
     .text(
-      ' ',
+      feeValue,
       startX + tableLimit * (2 / 5) + gutterX,
       startY + boxHeight * 4 + gutterY
     )
@@ -409,14 +395,17 @@ export default function (doc) {
   doc
     .rect(
       startX + tableLimit * (3 / 5),
-      startY + boxHeight * 4, tableLimit * (1 / 5), boxHeight)
+      startY + boxHeight * 4,
+      tableLimit * (1 / 5),
+      boxHeight
+    )
     .stroke(lineColor)
 
   doc
     .fontSize(smallFontSize)
     .font(fontRegular)
     .text(
-      '(+) Mora / Multa',
+      '(-) Outros Acrécimos',
       startX + tableLimit * (3 / 5) + smallGutterX,
       startY + boxHeight * 4 + smallGutterY
     )
@@ -425,7 +414,7 @@ export default function (doc) {
     .fontSize(fontSize)
     .font(fontRegular)
     .text(
-      ' ',
+      outherFees,
       startX + tableLimit * (3 / 5) + gutterX,
       startY + boxHeight * 4 + gutterY
     )
@@ -433,7 +422,10 @@ export default function (doc) {
   doc
     .rect(
       startX + tableLimit * (4 / 5),
-      startY + boxHeight * 4, tableLimit * (1 / 5), boxHeight)
+      startY + boxHeight * 4,
+      tableLimit * (1 / 5),
+      boxHeight
+    )
     .stroke(lineColor)
 
   doc
@@ -445,24 +437,19 @@ export default function (doc) {
       startY + boxHeight * 4 + smallGutterY
     )
 
-  doc
-    .fontSize(mediumFontSize)
-    .font(fontBold)
+  doc.fontSize(mediumFontSize).font(fontBold)
 
   const widthOfStringCharge = doc.widthOfString(chargeValue)
 
-  doc
-    .text(
-      chargeValue,
-      tableLimit - widthOfStringCharge + gutterX,
-      startY + boxHeight * 4 + gutterY
-    )
+  doc.text(
+    chargeValue,
+    tableLimit - widthOfStringCharge + gutterX,
+    startY + boxHeight * 4 + gutterY
+  )
 
   // Payer info box
   doc
-    .rect(
-      startX,
-      startY + boxHeight * 5, tableLimit, boxHeight * 3)
+    .rect(startX, startY + boxHeight * 5, tableLimit, boxHeight * 3)
     .stroke(lineColor)
 
   doc
@@ -475,33 +462,40 @@ export default function (doc) {
     )
 
   doc
-      .fontSize(fontSize)
-      .font(fontBold)
-      .text(
-        'Anita Albuquerque - 221.412.772-05',
-        startX + 30,
-        startY + boxHeight * 5 + 3
-      )
+    .fontSize(fontSize)
+    .font(fontBold)
+    .text(
+      payer.name + ' - ' + payer.registerNumber,
+      startX + 30,
+      startY + boxHeight * 5 + 3
+    )
 
   doc
-      .fontSize(fontSize)
-      .font(fontRegular)
-      .text(
-        'Rua Maria Gertrudes Coelho, 827',
-        startX + 30,
-        startY + boxHeight * 5 + 13
-      )
+    .fontSize(fontSize)
+    .font(fontRegular)
+    .text(
+      payer.street +
+        ', ' +
+        payer.number +
+        ' ' +
+        payer.complement +
+        ' - ' +
+        payer.district,
+      startX + 30,
+      startY + boxHeight * 5 + 13
+    )
 
   doc
-      .fontSize(fontSize)
-      .font(fontRegular)
-      .text(
-        'Divinópolis-MG - CEP: 35500-700',
-        startX + 30,
-        startY + boxHeight * 5 + 23
-      )
+    .fontSize(fontSize)
+    .font(fontRegular)
+    .text(
+      payer.city + ' - ' + payer.state + ' - CEP: ' + payer.postalCode,
+      startX + 30,
+      startY + boxHeight * 5 + 23
+    )
 
-  doc
+  if (guarantor) {
+    doc
       .fontSize(smallFontSize)
       .font(fontRegular)
       .text(
@@ -510,39 +504,44 @@ export default function (doc) {
         startY + boxHeight * 5 + 40
       )
 
-  doc
+    doc
       .fontSize(7)
       .font(fontRegular)
       .text(
-        'ACME Telecomunicações Ltda - CNPJ: 074.064.502/0001-12',
+        guarantor.name + ' - ' + guarantor.registerNumber,
         startX + 50,
         startY + boxHeight * 5 + 43
       )
 
-  doc
+    doc
       .fontSize(7)
       .font(fontRegular)
       .text(
-        'Servidão 439, Estrada Nova',
+        guarantor.street + ', ' + guarantor.number + ', ' + guarantor.district,
         startX + 50,
         startY + boxHeight * 5 + 53
       )
 
-  doc
+    doc
       .fontSize(7)
       .font(fontRegular)
       .text(
-        'Jaraguá do Sul - SC - CEP: 89254-375',
+        guarantor.city +
+          ' - ' +
+          guarantor.state +
+          ' - CEP: ' +
+          guarantor.postalCode,
         startX + 50,
         startY + boxHeight * 5 + 63
       )
+  }
 
   doc
-      .fontSize(smallFontSize)
-      .font(fontRegular)
-      .text(
-        'Auntênticação Mecânica - Recibo',
-        tableLimit - 70,
-        startY + boxHeight * 8 + 5
-      )
+    .fontSize(smallFontSize)
+    .font(fontRegular)
+    .text(
+      'Auntênticação Mecânica - Recibo',
+      tableLimit - 70,
+      startY + boxHeight * 8 + 5
+    )
 }

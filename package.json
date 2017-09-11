@@ -1,6 +1,6 @@
 {
   "name": "boleto-pdf",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "boleto pdf generetor ",
   "main": "src/index.js",
   "scripts": {

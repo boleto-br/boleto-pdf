@@ -1,8 +1,8 @@
 # boleto-pdf
 > Um simples gerador de pdf de boletos de bancos brasileros.
 
-Esse projeto tem como objetivo apenas gerar o pdf do boleto, ele não criar linhas
-digitáveis, nem criar um número do código de barras e etc. Para isso recomendo o
+Esse projeto tem como objetivo apenas gerar o pdf do boleto, ele não cria linhas
+digitáveis, nem cria o número do código de barras e etc. Para isso recomendo o
 uso do [boleto-br](https://www.npmjs.com/package/boleto-br).
 
 Suporte:

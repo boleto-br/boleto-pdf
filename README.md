@@ -22,7 +22,7 @@ const fs = require('fs')
 const {bradesco} = require('./index')
 
 const boleto = {
-  barCode: '23797726700000009997506091900000120800542910',
+  barcodeData: '23797726700000009997506091900000120800542910',
   digitableLine: '23797.50603 91900.000125 08005.429108 7 72670000000999',
   paymentPlace:
   'Pagável preferencialmente na rede Bradesco ou Bradesco Expresso.',

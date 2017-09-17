@@ -6,16 +6,16 @@ These are just guidelines, not rules.
 Use your best judgment, and feel free to propose changes to this document in a pull request.
 
 ## Reporting Issues
-Found a problem? Want a new feature? First of all see if your issue or idea has [already been reported](https://github.com/boleto-br/boleto-br/issues).
-If don't, just open a [new clear and descriptive issue](https://github.com/boleto-br/boleto-br/issues/new).
+Found a problem? Want a new feature? First of all see if your issue or idea has [already been reported](https://github.com/boleto-br/boleto-pdf/issues).
+If don't, just open a [new clear and descriptive issue](https://github.com/boleto-br/boleto-pdf/issues/new).
 
 ## Submitting pull requests
 
 Pull requests are the greatest contributions, so be sure they are focused in scope, and do avoid unrelated commits.
 
 - Fork it!
-- Clone your fork: `git clone https://github.com/<your-username>/boleto-br`
-- Navigate to the newly cloned directory: `cd boleto-br`
+- Clone your fork: `git clone https://github.com/<your-username>/boleto-pdf`
+- Navigate to the newly cloned directory: `cd boleto-pdf`
 - Create a new branch for the new feature: `git checkout -b my-new-feature`
 - Install the tools necessary for development: `npm install`
 - Make your changes.
@@ -27,7 +27,7 @@ Pull requests are the greatest contributions, so be sure they are focused in sco
 
 After you had make a fork you will want to keep your fork up to date with the changes that may happen in this repository (upstream).
 
-- Configure the remote for your fork: `git remote add upstream https://github.com/boleto-br/boleto-br.git`
+- Configure the remote for your fork: `git remote add upstream https://github.com/boleto-br/boleto-pdf.git`
 - Fetch the branches and their respective commits from the upstream repository: `git fetch upstream`
 - Check out your fork's local master branch: `git checkout master`
 - Merge the changes from upstream/master into your local master branch. This brings your fork's master branch into sync with the upstream repository, without losing your local changes: `git merge upstream/master`
@@ -45,11 +45,6 @@ Every time you write a test, remember to answer all the questions:
 Follow the [xo](https://github.com/sindresorhus/xo) style.
 Using two spaces for identation and no [semicolons](http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding).
 
-## Static type system
-
-Use [flow](https://flow.org/) to check the types of your code.
-JavaScript is not a statically typed language but using [flow](https://flow.org/) is this project helps a lot the validate the user input.
-To accomplish that runtime checking of types is used [flow-runtime](https://codemix.github.io/flow-runtime/#/) to transform the [flow](https://flow.org/) markup in valid JavaScript type checking.
 
 ## Commit Message Emoji
 
@@ -81,5 +76,4 @@ The follow scripts are available when you develop.
 
 - `npm test` - Run the tests.
 - `npm run test:watch` - Run the tests on the watch mode.
-- `npm run coverage` - See the code coverage of the tests.
 - `npm run build` - Build the package.

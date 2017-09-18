@@ -1,15 +1,9 @@
+import MockDate from 'mockdate'
 import generatePDF from '../../src/bradesco/generate-pdf'
 
 describe('genaratePdf main functionality', () => {
   it('generatePdf should generate a valid pdf file', async () => {
-    const freezeDate = new Date(Date.UTC(2017, 8, 10, 19, 19, 6).valueOf())
-
-    global.Date = class extends Date {
-      constructor() {
-        super()
-        return freezeDate
-      }
-    }
+    MockDate.set(1434319925275)
 
     global.Math.random = jest.fn(() => 0.5)
 
@@ -69,8 +63,10 @@ describe('genaratePdf main functionality', () => {
       const blob = await generatePDF(boleto)
       const tree = blob.toString()
       expect(tree).toMatchSnapshot()
+      MockDate.reset()
     } catch (err) {
       console.log(err)
+      MockDate.reset()
     }
   })
 })

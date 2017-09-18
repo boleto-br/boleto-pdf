@@ -1,3 +1,4 @@
+import formatDate from '../utils/format-date'
 export default function (
   doc,
   {
@@ -13,7 +14,7 @@ export default function (
     card,
     documentNumber,
     formatedOurNumber,
-    value,
+    formatedValue,
     descountValue,
     otherDiscounts,
     feeValue,
@@ -151,7 +152,7 @@ export default function (
     .fontSize(mediumFontSize)
     .font(fontBold)
     .text(
-      expirationDay,
+      formatDate(expirationDay, 'DD/MM/YYYY'),
       startX + tableLimit * (3 / 4) + 65,
       startY + boxHeight * 2 + 7
     )
@@ -173,7 +174,7 @@ export default function (
   doc
     .fontSize(fontSize)
     .font(fontRegular)
-    .text(documentDate, startX + gutterX, startY + boxHeight * 3 + gutterY)
+    .text(formatDate(documentDate, 'DD/MM/YYYY'), startX + gutterX, startY + boxHeight * 3 + gutterY)
 
   doc
     .rect(
@@ -197,7 +198,7 @@ export default function (
     .fontSize(fontSize)
     .font(fontRegular)
     .text(
-      processingDate,
+      formatDate(processingDate, 'DD/MM/YYYY'),
       startX + tableLimit * (1.5 / 10) + gutterX,
       startY + boxHeight * 3 + gutterY
     )
@@ -303,10 +304,10 @@ export default function (
 
   doc.fontSize(mediumFontSize).font(fontBold)
 
-  const widthStringValue = doc.widthOfString(value)
+  const widthStringValue = doc.widthOfString(formatedValue)
 
   doc.text(
-    value,
+    formatedValue,
     startX + tableLimit - widthStringValue - 10,
     startY + boxHeight * 3 + 9
   )

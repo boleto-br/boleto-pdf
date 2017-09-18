@@ -25,13 +25,13 @@ describe('genaratePdf main functionality', () => {
         'Após o vencimento cobrar multa de 2,00% , mais juros ao mes de 1,00%.',
       agency: '7506-0',
       accountNumer: '54291-1',
-      expirationDay: '30/08/2017',
-      documentDate: '18/08/2017',
-      processingDate: '18/08/2017',
+      expirationDay: new Date(2017, 7, 30), // 30/08/2017
+      documentDate: new Date(2017, 7, 18), // 18/08/2017
+      processingDate: new Date(2017, 7, 18), // 18/08/2017
       card: '09',
       documentNumber: '42493',
       formatedOurNumber: '09/19000001208-0',
-      value: 'R$ 9,90',
+      formatedValue: 'R$ 9,90',
       documentType: 'DS',
       accept: 'N',
       currencyType: 'Real (R$)',

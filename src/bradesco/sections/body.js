@@ -1,3 +1,4 @@
+import formatDate from '../utils/format-date'
 export default function (
   doc,
   {
@@ -13,7 +14,7 @@ export default function (
     card,
     documentNumber,
     formatedOurNumber,
-    value,
+    formatedValue,
     accept,
     billValue,
     amount,
@@ -50,7 +51,7 @@ export default function (
 ) {
   const startY = bodyStarY
   const rightSize = 160
-  const widthStringValue = doc.widthOfString(value)
+  const widthStringValue = doc.widthOfString(formatedValue)
   // Restore line
   doc.lineWidth(line).undash()
 
@@ -114,7 +115,7 @@ export default function (
     .fontSize(mediumFontSize)
     .font(fontBold)
     .text(
-      expirationDay,
+      formatDate(expirationDay,'DD/MM/YYYY'),
       startX + tableLimit - rightSize + 90,
       startY + boxHeight + gutterX
     )
@@ -188,7 +189,7 @@ export default function (
   doc
     .fontSize(fontSize)
     .font(fontRegular)
-    .text(documentDate, startX + gutterX, startY + boxHeight * 3 + gutterX)
+    .text(formatDate(documentDate, 'DD/MM/YYYY'), startX + gutterX, startY + boxHeight * 3 + gutterX)
 
   doc
     .rect(startX + 100, startY + boxHeight * 3, 140, boxHeight)
@@ -219,10 +220,10 @@ export default function (
     .stroke(lineColor)
 
   doc
-    .fontSize(smallFontSize)
+    .fontSize(6)
     .font(fontRegular)
     .text(
-      'Espécie do documento',
+      'Espécie do doc.',
       startX + 240 + smallGutterX,
       startY + boxHeight * 3 + smallGutterY
     )
@@ -277,7 +278,7 @@ export default function (
     .fontSize(fontSize)
     .font(fontRegular)
     .text(
-      processingDate,
+      formatDate(processingDate, 'DD/MM/YYYY'),
       startX + 325 + smallGutterX,
       startY + boxHeight * 3 + gutterX
     )
@@ -433,7 +434,7 @@ export default function (
     .fontSize(mediumFontSize)
     .font(fontBold)
     .text(
-      value,
+      formatedValue,
       tableLimit - widthStringValue - 5,
       startY + boxHeight * 4 + gutterX
     )

@@ -1,4 +1,8 @@
 # boleto-pdf
+
+<a href="https://www.npmjs.com/package/boleto-pdf"><img src="https://img.shields.io/npm/v/boleto-pdf.svg" alt="npm"></a>
+<a href="https://travis-ci.org/boleto-br/boleto-pdf"><img src="https://img.shields.io/travis/boleto-br/boleto-pdf.svg"
+
 > Um simples gerador de pdf de boletos de bancos brasileros.
 
 Esse projeto tem como objetivo apenas gerar o pdf do boleto, ele não cria linhas
@@ -15,11 +19,21 @@ Suporte:
 | Itaú         |  Help Wanted         |
 | Outros       |  Help Wanted         |
 
+## Instalação
+
+Este projeto usa [node](http://nodejs.org) e [npm](https://npmjs.com).
+Verifique em seu sistema se já estão instalados, corretamente.
+
+```sh
+$ npm install boleto-pdf --save
+
+```
+
 ## Uso
 
 ```js
 const fs = require('fs')
-const {bradesco} = require('./index')
+const {bradesco} = require('boleto-pdf')
 
 const boleto = {
   barcodeData: '23797726700000009997506091900000120800542910',

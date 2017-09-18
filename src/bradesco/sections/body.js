@@ -1,4 +1,5 @@
 import formatDate from '../utils/format-date'
+
 export default function (
   doc,
   {
@@ -115,7 +116,7 @@ export default function (
     .fontSize(mediumFontSize)
     .font(fontBold)
     .text(
-      formatDate(expirationDay,'DD/MM/YYYY'),
+      formatDate(expirationDay, 'DD/MM/YYYY'),
       startX + tableLimit - rightSize + 90,
       startY + boxHeight + gutterX
     )
@@ -189,7 +190,11 @@ export default function (
   doc
     .fontSize(fontSize)
     .font(fontRegular)
-    .text(formatDate(documentDate, 'DD/MM/YYYY'), startX + gutterX, startY + boxHeight * 3 + gutterX)
+    .text(
+      formatDate(documentDate, 'DD/MM/YYYY'),
+      startX + gutterX,
+      startY + boxHeight * 3 + gutterX
+    )
 
   doc
     .rect(startX + 100, startY + boxHeight * 3, 140, boxHeight)

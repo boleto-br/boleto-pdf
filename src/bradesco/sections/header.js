@@ -8,7 +8,9 @@ export default function (
     beneficiary,
     beneficiaryAddress,
     agency,
-    accountNumer,
+    agencyDigit,
+    account,
+    accountDigit,
     expirationDay,
     documentDate,
     processingDate,
@@ -126,7 +128,7 @@ export default function (
     .fontSize(fontSize)
     .font(fontRegular)
     .text(
-      agency + ' / ' + accountNumer,
+    `${agency}-${agencyDigit} / ${account}-${accountDigit}`,
       startX + tableLimit * (2 / 4) + 65,
       startY + boxHeight * 2 + gutterY
     )

@@ -17,8 +17,10 @@ describe('genaratePdf main functionality', () => {
         'Rua Tenete Silveira, 315 - Centro - Florianópolis - SC  - CEP 88010-301',
       instructions:
         'Após o vencimento cobrar multa de 2,00% , mais juros ao mes de 1,00%.',
-      agency: '7506-0',
-      accountNumer: '54291-1',
+      agency: '7506',
+      agencyDigit: '0',
+      account: '54291',
+      accountDigit: '1',
       expirationDay: new Date(2017, 7, 30), // 30/08/2017
       documentDate: new Date(2017, 7, 18), // 18/08/2017
       processingDate: new Date(2017, 7, 18), // 18/08/2017

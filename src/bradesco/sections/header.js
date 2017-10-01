@@ -128,7 +128,7 @@ export default function (
     .fontSize(fontSize)
     .font(fontRegular)
     .text(
-    `${agency}-${agencyDigit} / ${account}-${accountDigit}`,
+      `${agency}-${agencyDigit} / ${account}-${accountDigit}`,
       startX + tableLimit * (2 / 4) + 65,
       startY + boxHeight * 2 + gutterY
     )

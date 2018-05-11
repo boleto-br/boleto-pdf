@@ -3,9 +3,11 @@ import MockDate from 'mockdate'
 import generatePDF from '../../src/bradesco/generate-pdf'
 
 describe('genaratePdf main functionality', () => {
-  it('generatePdf should generate a valid pdf file', async () => {
+  beforeEach(() => {
     MockDate.set(1434319925275)
+  })
 
+  it('generatePdf should generate a valid pdf file', async () => {
     global.Math.random = jest.fn(() => 0.5)
 
     const boleto = {
@@ -62,20 +64,15 @@ describe('genaratePdf main functionality', () => {
         postalCode: '89254-375'
       }
     }
-    try {
-      const blob = await generatePDF(boleto)
-      const tree = blob.toString()
 
-      const hash = crypto
-        .createHash('sha1')
-        .update(tree)
-        .digest('hex')
+    const blob = await generatePDF(boleto)
+    const tree = blob.toString()
 
-      expect(hash).toMatchSnapshot()
-      MockDate.reset()
-    } catch (err) {
-      console.log(err)
-      MockDate.reset()
-    }
+    const hash = crypto
+      .createHash('sha1')
+      .update(tree)
+      .digest('hex')
+
+    expect(hash).toMatchSnapshot()
   })
 })

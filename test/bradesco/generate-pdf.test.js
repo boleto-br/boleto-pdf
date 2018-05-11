@@ -1,3 +1,4 @@
+import crypto from 'crypto'
 import MockDate from 'mockdate'
 import generatePDF from '../../src/bradesco/generate-pdf'
 
@@ -64,7 +65,13 @@ describe('genaratePdf main functionality', () => {
     try {
       const blob = await generatePDF(boleto)
       const tree = blob.toString()
-      expect(tree).toMatchSnapshot()
+
+      const hash = crypto
+        .createHash('sha1')
+        .update(tree)
+        .digest('hex')
+
+      expect(hash).toMatchSnapshot()
       MockDate.reset()
     } catch (err) {
       console.log(err)

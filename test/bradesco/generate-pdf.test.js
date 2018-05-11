@@ -1,12 +1,15 @@
+import crypto from 'crypto'
 import MockDate from 'mockdate'
 import generatePDF from '../../src/bradesco/generate-pdf'
 
 describe('genaratePdf main functionality', () => {
-  it('generatePdf should generate a valid pdf file', async () => {
+  beforeEach(() => {
     MockDate.set(1434319925275)
 
-    global.Math.random = jest.fn(() => 0.5)
+    global.Math.random = () => 0.5
+  })
 
+  it('generatePdf should generate a valid pdf file', async () => {
     const boleto = {
       barcodeData: '23797726700000009997506091900000120800542910',
       digitableLine: '23797.50603 91900.000125 08005.429108 7 72670000000999',
@@ -61,14 +64,15 @@ describe('genaratePdf main functionality', () => {
         postalCode: '89254-375'
       }
     }
-    try {
-      const blob = await generatePDF(boleto)
-      const tree = blob.toString()
-      expect(tree).toMatchSnapshot()
-      MockDate.reset()
-    } catch (err) {
-      console.log(err)
-      MockDate.reset()
-    }
+
+    const blob = await generatePDF(boleto)
+    const tree = blob.toString()
+
+    const hash = crypto
+      .createHash('sha1')
+      .update(tree)
+      .digest('hex')
+
+    expect(hash).toMatchSnapshot()
   })
 })

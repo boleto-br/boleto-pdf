@@ -1,5 +1,7 @@
-import moment from 'moment'
+import {DateTime} from 'luxon'
 
-export default function (date, format) {
-  return moment(date).format(format)
+const DEFAULT_FORMAT = 'dd/LL/yyyy'
+
+export default function(date, format = DEFAULT_FORMAT) {
+  return DateTime.fromJSDate(date).toFormat(format)
 }

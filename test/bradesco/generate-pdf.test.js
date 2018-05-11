@@ -6,9 +6,7 @@ describe('genaratePdf main functionality', () => {
   beforeEach(() => {
     MockDate.set(1434319925275)
 
-    const mockMath = Object.create(global.Math)
-    mockMath.random = () => 0.5
-    global.Math = mockMath
+    global.Math.random = () => 0.5
   })
 
   it('generatePdf should generate a valid pdf file', async () => {

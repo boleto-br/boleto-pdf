@@ -5,11 +5,13 @@ import generatePDF from '../../src/bradesco/generate-pdf'
 describe('genaratePdf main functionality', () => {
   beforeEach(() => {
     MockDate.set(1434319925275)
+
+    const mockMath = Object.create(global.Math)
+    mockMath.random = () => 0.5
+    global.Math = mockMath
   })
 
   it('generatePdf should generate a valid pdf file', async () => {
-    global.Math.random = jest.fn(() => 0.5)
-
     const boleto = {
       barcodeData: '23797726700000009997506091900000120800542910',
       digitableLine: '23797.50603 91900.000125 08005.429108 7 72670000000999',

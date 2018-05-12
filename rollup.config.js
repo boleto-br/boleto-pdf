@@ -1,9 +1,9 @@
 import {readFileSync} from 'fs'
 import {resolve} from 'path'
+import {sync as copySync} from 'cp-file'
 import gzipSize from 'gzip-size'
 import chalk from 'chalk'
 import prettyBytes from 'pretty-bytes'
-import copyFile from 'fs-copy-file'
 import babel from 'rollup-plugin-babel'
 import localResolve from 'rollup-plugin-local-resolve'
 
@@ -27,13 +27,14 @@ function copy(files) {
   return {
     ongenerate() {
       Object.entries(files).forEach(([src, dest]) => {
-        copyFile(resolve(__dirname, src), resolve(__dirname, dest), err => {
-          if (err) {
-            console.error('error copying' + chalk.red(src))
-          }
-
-          console.log('copied ' + chalk.green(dest))
-        })
+        try {
+          copySync(resolve(__dirname, src), resolve(__dirname, dest))
+          const report = chalk.green(src + ' -> ' + dest)
+          console.log(report)
+        } catch (err) {
+          const report = chalk.red('error on copy file: ' + src + ' to ' + dest)
+          console.log(report)
+        }
       })
     }
   }

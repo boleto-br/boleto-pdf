@@ -104,7 +104,7 @@ export default function (
   doc
     .fontSize(smallFontSize)
     .font(fontBold)
-    .text(beneficiaryAddress, startX + 40, startY + boxHeight * 2 + 15)
+    .text(beneficiaryAddress, startX + 20, startY + boxHeight * 2 + 15)
 
   doc
     .rect(

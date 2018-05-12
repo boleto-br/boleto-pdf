@@ -36,7 +36,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
     "chalk": "^2.4.1",
-    "fs-copy-file": "^2.1.2",
+    "cp-file": "^6.0.0",
     "gzip-size": "^4.1.0",
     "husky": "^0.14.3",
     "jest": "^22.4.3",
@@ -57,7 +57,10 @@
     ],
     "rules": {
       "no-mixed-operators": 0
-    }
+    },
+    "ignores": [
+      "example/**"
+    ]
   },
   "files": [
     "dist"

@@ -9,7 +9,9 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "build": "rollup -c",
-    "precommit": "npm test && npm run build"
+    "precommit": "npm test && npm run build",
+    "coverage": "jest --coverage",
+    "coveralls": "npm run coverage && cat coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -27,7 +29,7 @@
   },
   "homepage": "https://github.com/boleto-br/boleto-pdf#readme",
   "dependencies": {
-    "luxon": "^1.2.0",
+    "luxon": "^1.2.1",
     "pdfkit": "^0.8.3"
   },
   "devDependencies": {
@@ -36,17 +38,18 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
     "chalk": "^2.4.1",
+    "coveralls": "^3.0.1",
     "cp-file": "^6.0.0",
     "gzip-size": "^4.1.0",
     "husky": "^0.14.3",
-    "jest": "^22.4.3",
+    "jest": "^22.4.4",
     "mockdate": "^2.0.2",
     "prettier": "^1.12.1",
     "pretty-bytes": "^5.0.0",
-    "rollup": "^0.59.1",
+    "rollup": "^0.59.2",
     "rollup-plugin-babel": "^3.0.4",
     "rollup-plugin-local-resolve": "^1.0.7",
-    "xo": "^0.21.0"
+    "xo": "^0.21.1"
   },
   "xo": {
     "semicolon": false,

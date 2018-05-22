@@ -3,6 +3,7 @@
 [![npm (scoped)](https://img.shields.io/npm/v/boleto-pdf.svg)](https://www.npmjs.com/package/boleto-pdf)
 [![Travis](https://img.shields.io/travis/boleto-br/boleto-pdf.svg)](https://travis-ci.org/boleto-br/boleto-pdf)
 [![Coveralls](https://img.shields.io/coveralls/boleto-br/boleto-pdf.svg)](https://coveralls.io/github/boleto-br/boleto-pdf?branch=master)
+[![Greenkeeper badge](https://badges.greenkeeper.io/boleto-br/boleto-pdf.svg)](https://greenkeeper.io/)
 
 > Um simples gerador de pdf de boletos de bancos brasileros.
 

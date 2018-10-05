@@ -41,7 +41,7 @@
     "coveralls": "^3.0.1",
     "cp-file": "^6.0.0",
     "gzip-size": "^5.0.0",
-    "husky": "^0.14.3",
+    "husky": "^1.1.1",
     "jest": "^22.4.4",
     "mockdate": "^2.0.2",
     "prettier": "^1.12.1",

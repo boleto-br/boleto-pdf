@@ -47,7 +47,7 @@
     "prettier": "^1.12.1",
     "pretty-bytes": "^5.0.0",
     "rollup": "^0.63.0",
-    "rollup-plugin-babel": "^3.0.4",
+    "rollup-plugin-babel": "^4.1.0",
     "rollup-plugin-local-resolve": "^1.0.7",
     "xo": "^0.21.1"
   },

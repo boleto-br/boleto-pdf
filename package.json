@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/boleto-br/boleto-pdf#readme",
   "dependencies": {
-    "luxon": "^1.2.1",
+    "luxon": "^1.10.0",
     "pdfkit": "^0.8.3"
   },
   "devDependencies": {

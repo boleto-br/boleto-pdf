@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/boleto-br/boleto-pdf#readme",
   "dependencies": {
+    "gulp": "^4.0.2",
     "moment": "^2.18.1",
     "pdfkit": "^0.8.3"
   },

@@ -36,7 +36,7 @@ export default function (bill) {
       mediumFontSize: 11,
       fontBold: path.join(__dirname, 'fonts/roboto-regular.ttf'),
       fontRegular: path.join(__dirname, 'fonts/roboto-regular.ttf'),
-      logo: path.join(__dirname, 'logos/logo-bradesco.jpg'),
+      logo: path.join(__dirname, 'logos/logo-omni.jpg'),
       bodyStarY: realStartY + 25 * 10
     }
 

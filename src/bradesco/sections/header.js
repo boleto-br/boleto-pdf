@@ -104,7 +104,7 @@ export default function (
   doc
     .fontSize(smallFontSize)
     .font(fontBold)
-    .text(beneficiaryAddress, startX + 40, startY + boxHeight * 2 + 15)
+    .text(beneficiaryAddress, startX + 20, startY + boxHeight * 2 + 15)
 
   doc
     .rect(
@@ -129,7 +129,7 @@ export default function (
     .font(fontRegular)
     .text(
       `${agency}-${agencyDigit} / ${account}-${accountDigit}`,
-      startX + tableLimit * (2 / 4) + 65,
+      startX + tableLimit * (2 / 4) + 50,
       startY + boxHeight * 2 + gutterY
     )
 
@@ -155,7 +155,7 @@ export default function (
     .fontSize(mediumFontSize)
     .font(fontBold)
     .text(
-      formatDate(expirationDay, 'DD/MM/YYYY'),
+      formatDate(expirationDay),
       startX + tableLimit * (3 / 4) + 65,
       startY + boxHeight * 2 + 7
     )
@@ -178,7 +178,7 @@ export default function (
     .fontSize(fontSize)
     .font(fontRegular)
     .text(
-      formatDate(documentDate, 'DD/MM/YYYY'),
+      formatDate(documentDate),
       startX + gutterX,
       startY + boxHeight * 3 + gutterY
     )
@@ -205,7 +205,7 @@ export default function (
     .fontSize(fontSize)
     .font(fontRegular)
     .text(
-      formatDate(processingDate, 'DD/MM/YYYY'),
+      formatDate(processingDate),
       startX + tableLimit * (1.5 / 10) + gutterX,
       startY + boxHeight * 3 + gutterY
     )

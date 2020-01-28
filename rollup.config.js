@@ -63,7 +63,8 @@ export default {
     copy({
       'src/bradesco/fonts/roboto-bold.ttf': 'dist/fonts/roboto-bold.ttf',
       'src/bradesco/fonts/roboto-regular.ttf': 'dist/fonts/roboto-regular.ttf',
-      'src/bradesco/logos/logo-bradesco.jpg': 'dist/logos/logo-bradesco.jpg'
+      'src/bradesco/logos/logo-bradesco.jpg': 'dist/logos/logo-bradesco.jpg',
+      'src/omni/logos/logo-omni.jpg': 'dist/logos/logo-omni.jpg'
     }),
     filesize()
   ],

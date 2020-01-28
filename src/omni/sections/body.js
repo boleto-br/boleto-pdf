@@ -67,7 +67,7 @@ export default function (
   doc
     .fontSize(largefontSize)
     .font(fontBold)
-    .text('237-2', startX + 130, startY + 8)
+    .text('613', startX + 130, startY + 8)
 
   doc.rect(startX + 170, startY, line, boxHeight).fill(lineColor)
 
@@ -118,7 +118,7 @@ export default function (
     .fontSize(mediumFontSize)
     .font(fontBold)
     .text(
-      formatDate(expirationDay),
+      formatDate(expirationDay, 'DD/MM/YYYY'),
       startX + tableLimit - rightSize + 90,
       startY + boxHeight + gutterX
     )
@@ -193,7 +193,7 @@ export default function (
     .fontSize(fontSize)
     .font(fontRegular)
     .text(
-      formatDate(documentDate),
+      formatDate(documentDate, 'DD/MM/YYYY'),
       startX + gutterX,
       startY + boxHeight * 3 + gutterX
     )
@@ -285,7 +285,7 @@ export default function (
     .fontSize(fontSize)
     .font(fontRegular)
     .text(
-      formatDate(processingDate),
+      formatDate(processingDate, 'DD/MM/YYYY'),
       startX + 325 + smallGutterX,
       startY + boxHeight * 3 + gutterX
     )

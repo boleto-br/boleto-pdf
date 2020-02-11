@@ -16,6 +16,7 @@ Suporte:
 | Barco        |  Suporte             |
 |--------------|----------------------|
 | Bradesco     |  :white_check_mark:  |
+| OMNI         |  :white_check_mark:  |
 | Caixa        |  Em breve            |
 | Santander    |  Help Wanted         |
 | Itaú         |  Help Wanted         |
